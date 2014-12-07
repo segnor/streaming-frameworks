@@ -1,12 +1,11 @@
-Streaming Frameworks
-====================
+Big Data Processing with Apache Spark
+=====================================
 
-In this repository you will find my research work about streaming frameworks:
+This repository contains research artefacts for the master thesis
 
-* Apache Storm
-* Apache Kafka
-* Apache Flume
-* Apache S4
+Big Data Processing with Apache Spark
 
-Only two Directories expose and thesis are written in german. If source code is available everything will be in english. 
-The research will be archived on the wiki, and I'll try to use English.
+This artefacts are basically the thesis, some prototype code in scala and java and scripts
+for provisioning of the systems.
+
+

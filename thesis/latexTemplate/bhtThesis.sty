@@ -14,6 +14,7 @@
 \ProvidesPackage{latexTemplate/bhtThesis}[2010/07/21 v0.1 Beuth-Hochschule Abschlussarbeit-Style]
 \message{2010/07/21 v0.1 BHT-Thesis-Style, S. Tschirley, tschirley@bht-berlin.de}
 \message {2014/10/13 v3.1 BHT-Thesis-Style, E. Bergen}
+\message {2014/10/13 v3.2 BHT-Thesis-Style, S. Lorenz}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -75,8 +76,8 @@
 \newcommand{\thesistyp}[1]{\renewcommand{\thethesistyp}{#1}}
 \newcommand{\betreuerFeld}[1]{\renewcommand{\thebetreuerFeld}{#1}}
 
-\usepackage[author={Eduard Bergen}]{pdfcomment}
-\hypersetup{colorlinks, pdfstartview = FitH, bookmarksopen = true, bookmarksnumbered = true, linkcolor = black, plainpages = false, plainpages=false, citecolor = black,urlcolor = black, breaklinks=true, pdfauthor={Eduard Bergen}, pdfsubject={Master Thesis}, pdftitle={Vergleich von Streamingframeworks: STORM, KAFKA, FLUME, S4}, pdfkeywords={Apache Storm, Apache Kafka, Apache Flume, Apache S4}}
+\usepackage[author={Sascha Lorenz}]{pdfcomment}
+\hypersetup{colorlinks, pdfstartview = FitH, bookmarksopen = true, bookmarksnumbered = true, linkcolor = black, plainpages = false, plainpages=false, citecolor = black,urlcolor = black, breaklinks=true, pdfauthor={Sascha Lorenz}, pdfsubject={Master Thesis}, pdftitle={Big Data Processing mit Apache Spark}, pdfkeywords={Apache Spark, Apache HDFS, MLLib, Apache H2O, Spark Streaming}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -256,11 +257,12 @@
 
 \ifthenelse{\boolean{@pdfused}}
      {
-       \newcommand{\hslogo}{latexTemplate/BHT-Logo-Basis.pdf}
+       \newcommand{\hslogo}{latexTemplate/HS-EL-Logo.pdf}
      }
      {
-       \newcommand{\hslogo}{latexTemplate/BHT-Logo-Basis.eps}
+       \newcommand{\hslogo}{latexTemplate/HS-EL-Logo.eps}
      }
+     
 \newcommand{\hslogoscaled}[1]{{\mbox{\includegraphics[width=#1]\hslogo}}}
 
 \newcommand{\hsfont}{}{\fontfamily{phv}\fontseries{m}\fontshape{n}\selectfont}
@@ -319,7 +321,8 @@
           {\Large\theautor}\\[2ex]
           Matrikel-Nr.: \thematrnr\\[2ex]
           dem Fachbereich \thefachbereich\\
-          der Beuth Hochschule für Technik Berlin
+          der Hochschule Emden-Leer \\ 
+          und der Beuth Hochschule für Technik Berlin\\
           vorgelegte \thethesistyp\xspace \\
           zur Erlangung des akademischen Grades\\
           \textbf{\theabschluss}\\

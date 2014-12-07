@@ -1,9 +1,0 @@
-{
-  "name": "prototype",
-  "description": "a dashboard for measuring streaming data",
-  "version": "0.0.1",
-  "private": true,
-  "dependencies": {
-    "websocket": "1.0.8"
-  }
-}

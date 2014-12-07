@@ -1,10 +1,11 @@
 %%
-%% Beuth Hochschule für Technik --  Abschlussarbeit
+%% Hochschule Emden-Leer --  Abschlussarbeit
 %%
 %% Hauptdokument
 %%
 %% 23.01.09 Tschirley V.01
 %% 24.08.14 Bergen V.03
+%% 28.11.14 Lorenz V.04
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[11pt, a4paper]{book}
@@ -15,7 +16,7 @@
 %\usepackage[entwurf]{latexTemplate/bhtThesis}
 %% Übersetzen für die Abgabe
 \usepackage[abgabe]{latexTemplate/bhtThesis}	
-\typeout{BHT-Abschlussarbeit V3 28.04.14 E.Bergen}
+\typeout{Master-Thesis Sascha Lorenz Hochschule Emden-Leer V0.1}
 \usepackage{blindtext}   %für Blindtext, warum auch immer; ohne geht maketitle nicht: EB, 01.05.2014
 \usepackage{listings}
 \lstset{ 
@@ -134,22 +135,22 @@
 \typeout{----> thesis.tex ---- Zentrales Dokument-------------------}
 \typeout{-----------------------------------------------------------}
 
-\version{MILESTONE 26 (MS26)}
-\abgabedatum{{28}. {Oktober} {2014}}
+\version{1.56}
+\abgabedatum{{07}. {März} {2015}}
 %%
 %% Titel, Autor und Betreuer
 %%
-\fachbereich{VI -- Informatik und Medien --} 
+\fachbereich{Technik} 
 \studiengang{Medieninformatik-Online (Master)}
-\autor{Eduard Bergen}
-\matrnr{769248}
-\titel{Vergleich von Streamingframeworks: \\ STORM, KAFKA, FLUME, S4}
+\autor{Sascha P. Lorenz}
+\matrnr{501 63 21}
+\titel{Big Data Processing mit Apache Spark}
 \untertitel{}
 \betreuerFeld{
   \begin{tabular}{llr}
     
     \textbf{1. Betreuer} & Herr~Prof.~Dr.~Edlich & Beuth Hochschule für Technik\\
-    \textbf{Gutachter} & Herr~Prof.~Knabe & Beuth Hochschule für Technik
+    \textbf{2. Betreuer} & Herr~Prof.~Dr. Schiemann-Lillie & Hochschule Emden-Leer
   \end{tabular}
 }
 
@@ -175,14 +176,7 @@
 
 \input{einfuehrung.tex}
 \input{grundlagen.tex}
-\input{analyse.tex}
-\input{vorstellung.tex}
-
-\input{systementwurf.tex}
-\input{prototypeDokumentation.tex}
-
-\input{evaluierung.tex}
-\input{schlussbetrachtung.tex}
+\input{funktionsweise.tex}
 
 
 
