@@ -2,21 +2,21 @@
 \label{chapter:grundlagen von Spark}
 
 
-Rund um Hadoop beziehungsweise Spark wurde in Berkeley ein ganzer Infrastruktur-Stack für Big-Data-Analytics aufgebaut, der BDAS.
+Rund um \textit{Hadoop} beziehungsweise \textit{Spark} wurde in Berkeley ein ganzer Infrastruktur-Stack für Big-Data-Analytics aufgebaut, der BDAS.
 
 
 \section{Der Berkeley Data Analytics Stack (BDAS)}
 \label{section:der Berkeley Data Analytics Stack (BDAS)}
 
 	
-	Im Folgenden wird der Big Data Analytics Stack (BDAS) näher vorgestellt, der wie in der Einführung bereits erwähnt um Hadoop, bzw. Spark als Hauptbestandteile herum aufgebaut ist. Der BDAS wurde von den AMPLabs (kurz für „algorithms, machines and people“) von der University of California in Berkeley aufgrund von Forschungs-ergebnissen im Bereich der Analyse sehr großer Datenmengen ins Leben gerufen. 
+	Im Folgenden wird der \textit{Big Data Analytics Stack (BDAS)} näher vorgestellt, der wie in der Einführung bereits erwähnt um Hadoop, bzw. Spark als Hauptbestandteile herum aufgebaut ist. Der BDAS wurde von den \textit{AMPLabs} \footnote{kurz für „algorithms, machines and people“} von der University of California in Berkeley aufgrund von Forschungsergebnissen im Bereich der Analyse sehr großer Datenmengen ins Leben gerufen. 
 
-Der Einsatz des BDAS kann laut Vijay Agneeswaran [VA14] dabei helfen, unter anderem Fragen wie die folgenden zu beantworten: 
+Der Einsatz des BDAS kann laut Vijay Agneeswaran \citelit{va14} dabei helfen, unter anderem Fragen wie die folgenden zu beantworten: 
 
 \begin{itemize}
 		\item Wie segmentiert man am besten eine Menge von Nutzern und kann herausfinden, welche Nutzersegmente an bestimmten Kampagnen interessiert sein könnten?
 		\item Wie kann man richtige Metriken für Nutzer-Engagement in Social-Media-Applikationen herausfinden?
-		\item Wie kann ein Video-Streaming-Dienst für jeden Nutzer dynamisch ein optimales Content-Delivery-Network (CDN) basierend auf Daten wie Bandbreite, Auslastung, Pufferrate, etc Auswählen?
+		\item Wie kann ein Video-Streaming-Dienst für jeden Nutzer dynamisch ein optimales \textit{Content-Delivery-Network (CDN)} \footnote{Ein Content Delivery Network (auch Content Distribution Network) ist ein Netzwerk verteilter und über das World Wide Web verbundener Server, das den Zweck hat, grosse Dateien bereitzustellen und auszuliefern.} basierend auf Daten wie Bandbreite, Auslastung, Pufferrate, etc auswählen?
 		
 \end{itemize}	
 
@@ -24,18 +24,18 @@ Der Einsatz des BDAS kann laut Vijay Agneeswaran [VA14] dabei helfen, unter ande
 Prinzipiell sind die in der Einführung in Kürze beschriebenen Einschränkungen von Hadoop und die damit verbundene Motivation für Spark auch die Motivation für den BDAS. 
 
 
-In Abbildung 2.1 wird eine Übersicht über die drei Hauptschichten des BDAS gezeigt. Rot dargestellt ist hier jeweils die von den AMPLabs empfohlene Implementierung.
+In Abbildung \ref{fig:BDAS1} wird eine Übersicht über die drei Hauptschichten des BDAS gezeigt. Rot dargestellt ist hier jeweils die von den AMPLabs empfohlene Implementierung.
 
 \begin{figure}[htb!]
 \centering
 \includegraphics[width=1.0\textwidth]{bilder/2_1_stack.png}
 \caption{Grobübersicht über den BDAS mit den drei Hauptschichten}
-\label{fig:grobübersicht über den BDAS mit den drei Hauptschichten}
+\label{fig:BDAS1}
 \end{figure}
  
 
 
-In Abbildung 2.2 ist der Aufbau des BDAS nochmals schematisch dargestellt. Die grün hinterlegten Elemente markieren die Bestandteile des aktuellen BDAS, die violett hinterlegten zeigen alternative Implementierungen auf der jeweiligen Schicht. Grün schraffiert ist die Applikationsschicht, wo Applikationen oberhalb von Spark und den direkten Anwendungen angesiedelt sind. 
+In Abbildung \ref{fig:bdas]} ist der Aufbau des BDAS nochmals schematisch dargestellt. Die grün hinterlegten Elemente markieren die Bestandteile des aktuellen BDAS, die violett hinterlegten zeigen alternative Implementierungen auf der jeweiligen Schicht. Grün schraffiert ist die Applikationsschicht, wo Applikationen oberhalb von Spark und den direkten Anwendungen angesiedelt sind. 
 
 \begin{figure}[htb!]
 \centering
@@ -49,7 +49,7 @@ In Abbildung 2.2 ist der Aufbau des BDAS nochmals schematisch dargestellt. Die g
 \label{section:apache Mesos}
 
 
-Bei Apache Mesos handelt es sich um ein Cluster-Management-Framework für Anwendungen, die in verteilten Serverpools laufen sollen. Bestandteil von Mesos ist wiederum Apache ZooKeeper, das für Konfigurationsinformationen, Naming-Services und die Synchronisation von verteilten Anwendungen zuständig ist.  
+Bei \textit{Apache Mesos} handelt es sich um ein \textit{Cluster-Management-Framework} für Anwendungen, die in verteilten Serverpools laufen sollen. Bestandteil von Mesos ist wiederum \textit{Apache ZooKeeper}, das für Konfigurationsinformationen, Naming-Services und die Synchronisation von verteilten Anwendungen zuständig ist.  
 
 Mesos wird im BDAS eingesetzt, um die Prozesse von Hadoop/Spark effizient auf die einzelnen Knoten im Cluster zu verteilen. Besonders das Ressourcen-Management und –Monitoring innerhalb des Clusters ist ein wichtiger Faktor, um Jobs performant auf verteilten Systemen ausführen zu können. Auch das Fehlerhandling für Knoten, Prozesse und im Netzwerk wird im Berkeley-Stack von Mesos übernommen. 
 
@@ -76,9 +76,9 @@ Die Hauptbestandteile von HDFS sind der sogenannte NameNode, der die Metadaten d
 
  
 
-In Abbildung 2.3 wird die Datenmanagementschicht des BDAS nochmals detaillierter dargestellt. Hier ist erkennbar, dass reine Hadoop-Implementierungen direkt auf dem HDFS aufsetzen, da das HDFS für MapReduce optimiert ist. 
+In Abbildung \ref{fig:datamgmtlayer} wird die Datenmanagementschicht des BDAS nochmals detaillierter dargestellt. Hier ist erkennbar, dass reine Hadoop-Implementierungen direkt auf dem HDFS aufsetzen, da das HDFS für \textit{MapReduce} optimiert ist. 
 
-Kommt hingegen Spark zum Einsatz, lässt sich wahlweise direkt das HDFS ansprechen oder alternativ eine Zwischenschicht nutzen, die auf das In-Memory-Modell von Spark zugeschnitten ist. Dies ist innerhalb des BDAS das verteilte Dateisystem Tachyon. Hier werden die zu verarbeitenden oder zu analysierenden Datensätze direkt in den Hauptspeicher des jeweiligen Knoten gecached. Somit werden Lade- und Speicheroperationen auf Massenspeicher minimiert und eine massiv höhere Ausführungsgeschwindigkeit erreicht. Unterhalb von Tachyon ist nach wie vor ein HDFS für die persistente Datenhaltung notwendig. Alternativ kann auch das Amazon S3-File-Sytem eingesetzt werden. Tachyon wurde direkt innerhalb der AMPLabs entwickelt und ist mittlerweile fester Bestandteil des BDAS.  
+Kommt hingegen Spark zum Einsatz, lässt sich wahlweise direkt das \textit{HDFS} ansprechen oder alternativ eine Zwischenschicht nutzen, die auf das In-Memory-Modell von Spark zugeschnitten ist. Dies ist innerhalb des BDAS das verteilte Dateisystem Tachyon. Hier werden die zu verarbeitenden oder zu analysierenden Datensätze direkt in den Hauptspeicher des jeweiligen Knoten in Form eines Cache gehalten. Somit werden Lade- und Speicheroperationen auf Massenspeicher minimiert und eine massiv höhere Ausführungsgeschwindigkeit erreicht. Unterhalb von Tachyon ist nach wie vor ein HDFS für die persistente Datenhaltung notwendig. Alternativ kann auch das Amazon S3-File-System eingesetzt werden. Tachyon wurde direkt innerhalb der AMPLabs entwickelt und ist mittlerweile fester Bestandteil des BDAS.  
 
 
 \section{Apache Spark}
@@ -112,7 +112,7 @@ GraphX nutzt hier die Vorteile der darunterliegenden Spark-Infrastruktur, in dem
 \label{section:mLbase/MLLib}
 
 
-MLbase ist eine Sammlung von Bibliotheken und Werkzeugen für Machine-Learning-Anwendungen mit Spark. Sie besteht grundsätzlich aus den drei Teilen MLlib, MLI und ML-Optimizer und ist oberhalb der Spark-Installation angesiedelt, wie auf Abbildung 2.4.3. zu erkennen ist. 
+MLbase ist eine Sammlung von Bibliotheken und Werkzeugen für Machine-Learning-Anwendungen mit Spark. Sie besteht grundsätzlich aus den drei Teilen MLlib, MLI und ML-Optimizer und ist oberhalb der Spark-Installation angesiedelt, wie auf Abbildung \ref{fig:mlbase} zu erkennen ist. 
 
 \begin{figure}[htb!]
 \centering
@@ -149,7 +149,7 @@ Ein weiterer Unterschied zu Hive ist die sogenannte Partial-DAG-Execution (PDE).
 \label{section:alternative Wege innerhalb des BDAS}
 
 
-Wie in den Abbildungen 2.1 und 2.2 ersichtlich, existieren auf jeder Ebene des BDAS auch alternative Implementierungen. Einige davon werden im Folgenden kurz vorgestellt. 
+Wie in den Abbildungen \ref{fig:BDAS1} und \ref{fig:bdas]} ersichtlich ist, existieren auf jeder Ebene des BDAS auch alternative Implementierungen. Einige davon werden im Folgenden kurz vorgestellt. 
 
 
 \subsection{Hadoop MR (MapReduce)}
@@ -169,7 +169,7 @@ Hadoop besteht in erster Linie aus dem Hadoop File System (HDFS) und dem MapRedu
  
 
 
-In Abbildung 2.6.1 wird das MapReduce-Modell an einem praktischen Beispiel zur Wortzählung gezeigt. Bei MapReduce wird zunächst eine problemspezifische Map-Funktion definiert. Diese splittet die Ursprungsmenge in gleichgroße Teile, versieht unstrukturierte Worte in einem ersten Schritt mit Standardwerten, um so aus jedem unstrukturierten Datensatz ein Key-Value-Pair zu generieren. Im gezeigten Beispiel wird hier jedem Wert eine Eins als Anzahl zugeordnet. Im nächsten Schritt werden diese so gewonnenen Zwischen-Key-Value-Paare in einem Shuffling-Prozess klassifiziert und die so homogenisierten Pakete auf die Knoten im Cluster verteilt. Nun enthält jede Ausführungseinheit nur noch gleiche Wörter. Im Reduce-Schritt schließlich, werden die gleichartigen Wörter zu Gesamtmengen zusammengefasst, addiert und im Endergebnis aggregiert. 
+In Abbildung \ref{fig:wordcount} wird das MapReduce-Modell an einem praktischen Beispiel zur Wortzählung gezeigt. Bei MapReduce wird zunächst eine problemspezifische Map-Funktion definiert. Diese splittet die Ursprungsmenge in gleichgroße Teile, versieht unstrukturierte Worte in einem ersten Schritt mit Standardwerten, um so aus jedem unstrukturierten Datensatz ein Key-Value-Pair zu generieren. Im gezeigten Beispiel wird hier jedem Wert eine Eins als Anzahl zugeordnet. Im nächsten Schritt werden diese so gewonnenen Zwischen-Key-Value-Paare in einem Shuffling-Prozess klassifiziert und die so homogenisierten Pakete auf die Knoten im Cluster verteilt. Nun enthält jede Ausführungseinheit nur noch gleiche Wörter. Im Reduce-Schritt schließlich, werden die gleichartigen Wörter zu Gesamtmengen zusammengefasst, addiert und im Endergebnis aggregiert. 
 
 An dem gezeigten Beispiel lässt sich gut erkennen, dass die einzelnen Ausführungsschritte jeweils parallelisiert und auf separate Knoten im Cluster verteilt werden können. Das Laufzeitsystem kümmert sich um die Details der Partitionierung der Eingabedaten, die Ressourcenverwaltung innerhalb des Clusters, das Behandeln von Fehlern und die Kommunikation zwischen den einzelnen Knoten. 
  

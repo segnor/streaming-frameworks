@@ -1,9 +1,9 @@
 \chapter{Einführung}
 \label{chapter:einfuehrung}
 
-``Big Data" ist insbesondere in den letzten Jahren immer stärker in den verschiedensten Zusammenhängen in den allgemeinen Sprachgebrauch vorgedrungen und ist hier einem ständigen Bedeutungswandel ausgesetzt. Besonders in letzter Zeit wird dieses Thema auch verstärkt kontrovers diskutiert.  
+\textit{Big Data} ist insbesondere in den letzten Jahren immer stärker in den verschiedensten Zusammenhängen in den allgemeinen Sprachgebrauch vorgedrungen und ist hier einem ständigen Bedeutungswandel ausgesetzt. Besonders in letzter Zeit wird dieses Thema auch verstärkt kontrovers diskutiert.  
 
-Im ersten Kapitel soll der Begriff „Big Data“ jenseits von Management-Hype und Skepsis rational definiert werden. Des Weiteren werden einige grundlegende Konzepte des Umgangs mit sehr großen und unstrukturierten Datensätzen diskutiert und im Speziellen die Motivation hinter den Apache Frameworks Hadoop und Spark vorgestellt.  
+Im ersten Kapitel soll der Begriff \textit{Big Data} jenseits von Management-Hype und Skepsis rational definiert werden. Des Weiteren werden einige grundlegende Konzepte des Umgangs mit sehr großen und unstrukturierten Datensätzen diskutiert und im Speziellen die Motivation hinter den Apache Frameworks Hadoop und Spark vorgestellt.  
 
 Das zweite Kapitel beschäftigt sich mit dem Berkeley Data Analytics Stack (BDAS), mit dem von der UCLA Berkeley rund um Hadoop ein leistungsfähiger Infrastruktur-Stack für die Einsatzbereiche von Big Data Analytics geschaffen wurde. 
 
@@ -11,36 +11,36 @@ Innerhalb vom BDAS etabliert sich langsam auch eine schnellere und flexiblere Al
 
 Im vierten Teil dieser Ausarbeitung wird Spark in der praktischen Anwendung gezeigt inklusive Installation und ersten kleineren Beispielen sowohl direkt in Spark, als auch aus darüber liegenden Schichten aus dem Stack. 
 
-\section{Was versteht man unter ``Big Data“?}
-\label{section:was versteht man unter ``Big Data”?}
+\section{Was versteht man unter \textit{Big Data}?}
+\label{section:was versteht man unter Big Data?}
 
 
-Der Begriff ``Big Data“ wurde vermutlich zum ersten Mal Ende des 20. Jahrhunderts von John R. Marshey, damals Chefwissenschaftler bei Silicon Graphics, im Rahmen einer Usenix-Konferenz öffentlich erwähnt \citeint{jt11}. Mittlerweile ziert dieser Begriff gefühlt jedes zweite Cover von IT-Zeitschriften mit Business-Fokus und auch Manager und ``Sales-Professionals“ werten Ihre Produktpräsentationen gerne mit diesem Buzzword auf.  Aber dieser Begriff ist nicht nur positiv assoziiert. Besonders seit Bekanntwerden der Tätigkeiten des Amerikanischen Auslandsgeheimdienstes weckt die Vorstellung des „Datensammelns“ in großen Dimensionen auch Misstrauen. 
+Der Begriff \textit{Big Data} wurde vermutlich zum ersten Mal Ende des 20. Jahrhunderts von John R. Marshey, damals Chefwissenschaftler bei Silicon Graphics, im Rahmen einer Usenix-Konferenz öffentlich erwähnt \citeint{jt11}. Mittlerweile ziert dieser Begriff gefühlt jedes zweite Cover von IT-Zeitschriften mit Business-Fokus und auch Manager und \textit{Sales-Professionals} werten Ihre Produktpräsentationen gerne mit diesem Buzzword auf.  Aber dieser Begriff ist nicht nur positiv assoziiert. Besonders seit Bekanntwerden der Tätigkeiten des Amerikanischen Auslandsgeheimdienstes weckt die Vorstellung des Datensammelns in großen Dimensionen auch Misstrauen. 
 
 	Im Rahmen dieser Arbeit soll jedoch ausschließlich die technische Betrachtung und die exemplarische Darstellung von möglichen Anwendungsgebieten diskutiert werden.
 
 
 
 
-Wie lässt sich der Begriff „Big Data“ abgrenzen? Es existiert keine abschließend eindeutige Definition, jedoch gibt es einige Attribute, die sich in einem Großteil der Fachliteratur etabliert haben. Der Artikel aus dem O'Reilly Radar zum Thema \citeint{dumbhill} fasst dies folgendermaßen zusammen: 
+Wie lässt sich der Begriff \textit{Big Data} abgrenzen? Es existiert keine abschließend eindeutige Definition, jedoch gibt es einige Attribute, die sich in einem Großteil der Fachliteratur etabliert haben. Der Artikel aus dem O'Reilly Radar zum Thema \citeint{dumbhill} fasst dies folgendermaßen zusammen: 
 
 \enquote{Big data is data that exceeds the processing capacity of conventional database systems. The data is too big, moves too fast, or doesn’t fit the structures of your database architectures.}
 
-Neben der reinen Menge spielt also offensichtlich auch die mangelnde oder fehlende Strukturierung und unter Umständen die Flüchtigkeit der Daten eine nicht unerhebliche Rolle. Dies können beispielsweise Daten aus Social-Media-Quellen sein, die aus allen möglichen verschiedenen Einzeldaten bestehen, Daten von Sensoren, die permanent überwacht werden müssen, oder Datenströme (Video, Audio, Bilder, Text), die nach einheitlichen Kriterien gefiltert werden sollen, um hier nur einige Beispiele zu nennen. Auch die temporäre Komponente ist ein Einsatzgebiet für „Big Data“, und auch hier ist wieder das Beispiel der Datenströme heranzuziehen. 
+Neben der reinen Menge spielt also offensichtlich auch die mangelnde oder fehlende Strukturierung und unter Umständen die Flüchtigkeit der Daten eine nicht unerhebliche Rolle. Dies können beispielsweise Daten aus Social-Media-Quellen sein, die aus allen möglichen verschiedenen Einzeldaten bestehen, Daten von Sensoren, die permanent überwacht werden müssen, oder Datenströme (Video, Audio, Bilder, Text), die nach einheitlichen Kriterien gefiltert werden sollen, um hier nur einige Beispiele zu nennen. Auch die temporäre Komponente ist ein Einsatzgebiet für \textit{Big Data}, und auch hier ist wieder das Beispiel der Datenströme heranzuziehen. 
 
-Bei der Definition von Big Data werden laut des BITKOM-Ratgebers zum Thema „Big Data“ \citeint{bk14} auch immer wieder die „Three Vs“ angeführt. Dies sind Volume, also die Datenmenge, Variety, die Datenvielfalt und Velocity, die Geschwindigkeit der Auswertung. 
+Bei der Definition von \textit{Big Data} werden laut des BITKOM-Ratgebers zum Thema \textit{Big Data} \citeint{bk14} auch immer wieder die „Three Vs“ angeführt. Dies sind \textit{Volume}, also die Datenmenge, \textit{Variety}, die Datenvielfalt und \textit{Velocity}, die Geschwindigkeit der Auswertung. 
 
-Die sinnvolle Analyse dieser Daten kann Unternehmen oder anderen Organisationen wichtige Informationen z.B. über Marktentwicklungen, bestimmte Kundenbedürfnisse, Epedemie-Ausbreitungen oder andere wichtige Sachverhalte liefern. Diese Analyse inklusive der dazu verwendeten Werkzeuge wird allgemein „Big Data Analytics“ genannt. 
+Die sinnvolle Analyse dieser Daten kann Unternehmen oder anderen Organisationen wichtige Informationen z.B. über Marktentwicklungen, bestimmte Kundenbedürfnisse, Epedemie-Ausbreitungen oder andere wichtige Sachverhalte liefern. Diese Analyse inklusive der dazu verwendeten Werkzeuge wird allgemein \textit{Big Data Analytics} genannt. 
 
-\section{Ansätze für ``Big Data Analytics“}
-\label{section:ansaetze für ``Big Data Analytics“}
+\section{Ansätze für \textit{Big Data Analytics}}
+\label{section:ansaetze für Big Data Analytics}
 
 
-``Big Data Analytics“ umfasst Methoden und Werkzeuge zur automatisierten oder interaktiven Erkennung und daraufhin auch Verwendung von bestimmten Mustern und Assoziationen. Dies sind unter anderem:
+Die Disziplin \textit{Big Data Analytics} umfasst Methoden und Werkzeuge zur automatisierten oder interaktiven Erkennung und daraufhin auch Verwendung von bestimmten Mustern und Assoziationen. Dies sind unter anderem:
 
 \begin{itemize}
 		\item Prediction-Models zur Vorhersage bestimmter Sachverhalte
-		\item statistische Verfahren, wie beispielsweise Logistic Regression oder k-means-Algorithmen 
+		\item statistische Verfahren, wie beispielsweise \textit{Logistic Regression} oder \textit{k-means-Algorithmen} 
 		\item Optimierungs- und Filteralgorithmen 
 		\item Werkzeuge zum Datamining
 		\item Textanalyse
@@ -61,11 +61,11 @@ Nach dem BITKOM-Leitfaden \citeint{bk14} besteht die Taxonomie der Big-Data-Tech
 \end{itemize}	
 
 
-Diese werden durch Daten-Integration und Daten-Governance, sowie Daten-Sicherheit flankiert, um den Weg von Rohdaten bis zu nutzbaren Erkenntnissen in existierende Standards einzubetten.
+Diese werden durch \textit{Daten-Integration} und \textit{Daten-Governance}, sowie Daten-Sicherheit flankiert, um den Weg von Rohdaten bis zu nutzbaren Erkenntnissen in existierende Standards einzubetten.
 
-Zahlreiche Hersteller herkömmlicher relationaler Datenbanksysteme versuchen derzeit, ihre bestehenden Lösungen mit dem Label „Big Data“ zu versehen und diese so weiterhin in diesen sich verändernden Marktsegmenten zu positionieren. Wenn „Big Data“ jedoch jenseits der Datengröße definiert wird und auch unstrukturierte und temporäre Daten-Stacks oder –ströme zu verarbeiten oder zu analysieren sind, stoßen RDBMS sehr schnell an ihre Grenzen. Doch auch was die Skalierbarkeit angeht, sind relationale Datenbanken meist nicht hinreichend flexibel \citeint{ml10}. 
+Zahlreiche Hersteller herkömmlicher relationaler Datenbanksysteme versuchen derzeit, ihre bestehenden Lösungen mit dem Label \textit{Big Data} zu versehen und diese so weiterhin in diesen sich verändernden Marktsegmenten zu positionieren. Wenn \textit{Big Data} jedoch jenseits der Datengröße definiert wird und auch unstrukturierte und temporäre Daten-Stacks oder –ströme zu verarbeiten oder zu analysieren sind, stoßen RDBMS \footnote{RDBMS = Relational Database Management System, also ein relationales Datenbanksystem (im Gegensatz zu Objekt- oder Graphdatenbanken).} sehr schnell an ihre Grenzen. Doch auch was die Skalierbarkeit angeht, sind relationale Datenbanken meist nicht hinreichend flexibel \citeint{ml10}. 
 
-Für die Anforderungen an dedizierte Aufgaben im Bereich Big-Data-Analytics sind seit einigen Jahren einige Frameworks auf dem Markt, die in allen drei oben genannten Aspekten besser geeignet sind, als RDBMS. Der Ansatz ist hier primär, die Verarbeitung zu dezentralisieren, also auf unabhängige Knoten in einem Rechner-Cluster zu verteilen und nur Referenzen auf die Clusterknoten zentral zu verwalten.  
+Für die Anforderungen an dedizierte Aufgaben im Bereich \textit{Big-Data-Analytics} sind seit einigen Jahren einige \textit{Frameworks} auf dem Markt, die in allen drei oben genannten Aspekten besser geeignet sind, als RDBMS. Der Ansatz ist hier primär, die Verarbeitung zu dezentralisieren, also auf unabhängige Knoten in einem Rechner-Cluster zu verteilen und nur Referenzen auf die Clusterknoten zentral zu verwalten.  
 
 Es existieren mittlerweile Lösungen am Markt, die speziell diese Aufgaben für derartige Aufgaben entwickelt wurden. Hier wären unter anderem Hadoop, Spark, HPCC, GPMR, Mincmeat, Sphere, Bashreduce und R3 zu nennen. Bis auf HPCC setzen alle eben genannten Implementierungen generell oder in Teilen auf das Programmiermodell MapReduce. 
 
@@ -82,28 +82,28 @@ Der zweifellose De-facto-Standard in diesen Bereichen ist bereits seit einiger Z
 \section{Motivation für Apache Hadoop/Spark}
 \label{section:motivation für Apache Hadoop/Spark}
 
-Anfang des 21. Jahrhunderts wurde das Bedürfnis für Möglichkeiten, sehr große Datenmengen effizient verarbeiten zu können, stetig größer. Nicht zuletzt durch die zu dieser Zeit exponentiell steigende Menge von Inhalten im World Wide Web und deren Indexierung durch Suchmaschinen wie Google. Davon motiviert wurde 2002 das Projekt „Nutch“ mit dem Ziel gestartet, ein geeignetes Such- und Crawlersystem frei verfügbar zu machen. Die ersten Versuche skalierten sehr schlecht, bis Google 2003 die Funktionsweise ihres verteilten Dateisystem GFS (Google File System) veröffentlichte. Somit konnten die sehr großen Dateien, die durch die Indexierung entstanden, effizient auf verschiedene Knoten verteilt gespeichert werden und die Verwaltung dieser Knoten und Dateien aus dem eigentlichen Indexierungs- und Suchprozess ausgelagert werden. 
+Anfang des 21. Jahrhunderts wurde das Bedürfnis für Möglichkeiten, sehr große Datenmengen effizient verarbeiten zu können, stetig größer. Nicht zuletzt durch die zu dieser Zeit exponentiell steigende Menge von Inhalten im World Wide Web und deren Indexierung durch Suchmaschinen wie Google. Davon motiviert wurde 2002 das Projekt \textit{Nutch} mit dem Ziel gestartet, ein geeignetes \textit{Such- und Crawlersystem} frei verfügbar zu machen. Die ersten Versuche skalierten sehr schlecht, bis Google 2003 die Funktionsweise ihres verteilten Dateisystem GFS (Google File System) veröffentlichte. Somit konnten die sehr großen Dateien, die durch die Indexierung entstanden, effizient auf verschiedene Knoten verteilt gespeichert werden und die Verwaltung dieser Knoten und Dateien aus dem eigentlichen Indexierungs- und Suchprozess ausgelagert werden. 
 
-Im Jahre 2004 publizierte Google den MapReduce-Algorithmus, der unter anderem die Indexierungs- und Analysefunktionen parallelisieren, delegieren und sinnvoll bündeln kann. In Nutch wurden daraufhin sämtliche wichtige Algorithmen auf MapReduce umgestellt, nachdem zuvor auch GFS unter dem Namen NDFS (Nutch Distributed File System) integriert wurde. Die möglichen Anwendungsgebiete von Nutch waren damit auch weit über das reine Suchen und Indexieren von Webseiten hinaus gewachsen. 2006 wurde aus Nutch ein Unterprojekt mit dem Namen Hadoop ausgegliedert, das im Jahre 2008 zum Apache Top-Level-Project ernannt wurde. Zu dieser Zeit nutzten bereits Firmen wie Yahoo!, Facebook oder die New York Times Hadoop. Ein exemplarischer Anwendungsfall bei der NY Times war, mit Hilfe der Hadoop-basierten EC2-Cloud von Amazon ca. vier Terabyte gescannter Archivdateien in PDF-Dateien umzuwandeln und dies in weniger als 24 Stunden auf 100 Knoten. Auch beim Sortieren von sehr großen Datenmengen stellten Hadoop-basierte Systeme nach und nach sämtliche Rekorde ein [TW09]. 
+Im Jahre 2004 publizierte Google den \textit{MapReduce-Algorithmus}, der unter anderem die Indexierungs- und Analysefunktionen parallelisieren, delegieren und sinnvoll bündeln kann. In Nutch wurden daraufhin sämtliche wichtige Algorithmen auf MapReduce umgestellt, nachdem zuvor auch GFS unter dem Namen NDFS (Nutch Distributed File System) integriert wurde. Die möglichen Anwendungsgebiete von Nutch waren damit auch weit über das reine Suchen und Indexieren von Webseiten hinaus gewachsen. 2006 wurde aus Nutch ein Unterprojekt mit dem Namen Hadoop ausgegliedert, das im Jahre 2008 zum \textit{Apache Top-Level-Projec}t ernannt wurde. Zu dieser Zeit nutzten bereits Firmen wie Yahoo!, Facebook oder die New York Times Hadoop. Ein exemplarischer Anwendungsfall bei der NY Times war, mit Hilfe der Hadoop-basierten EC2-Cloud von Amazon ca. vier Terabyte gescannter Archivdateien in PDF-Dateien umzuwandeln und dies in weniger als 24 Stunden auf 100 Knoten. Auch beim Sortieren von sehr großen Datenmengen stellten Hadoop-basierte Systeme nach und nach sämtliche Rekorde ein \citelit{tw13}. 
 
-Hadoop und Hadoop-basierte System gelten mittlerweile als Industriestandard für Big-Data-Analytics-Anwendungen. Jedoch ist Hadoop nicht für alle Anwendungsgebiete gleichermaßen geeignet. Aufgrund der Charakterisierung der Paradigmen für Big Data Analytics im Paper „Frontiers in Massive Data Analysis“ der National Academic Press [NRC13], lassen sich die Einsatzgebiete und Schwächen für Hadoop ermitteln [VA14].
+Hadoop und Hadoop-basierte System gelten mittlerweile als Industriestandard für Big-Data-Analytics-Anwendungen. Jedoch ist Hadoop nicht für alle Anwendungsgebiete gleichermaßen geeignet. Aufgrund der Charakterisierung der Paradigmen für Big Data Analytics im Paper „Frontiers in Massive Data Analysis“ der National Academic Press \citelit{nrc13}, lassen sich die Einsatzgebiete und Schwächen für Hadoop ermitteln \citelit{va14}.
 
 So lassen sich mit Hadoop einfachere statistische Aufgabenstellungen sehr gut umsetzen. Dazu gehören Mittelwert, Median, Varianz und allgemein abzählende sowie ordnende Statistikaufgaben. Dies sind in der Regel Anwendungen mit einer Laufzeitkomplexität von O(n) für n Betrachtungswerte. Sie sind meist auch sehr gut parallelisierbar und somit sehr gut für Hadoop geeignet.    
 
 
 
 Für linear-algebraische Berechnungen (lineare Regression, Eigenwertproblem, Hauptkomponentenanalyse), generalisierte n-Körper-Probleme (mit einer Komplexität 
-von O(n²) oder O(n³)), Graphentheorie, Optimierungsprobleme (Verlust-, Kosten- oder Energiefunktionen, sowie  Integrations- und Ausrichtungsfunktionen ist Hadoop nur in jeweils einfacher Problemausprägung einsetzbar. Auch für Interaktive Abfragen ist Hadoop nur bedingt geeignet, da es ursprünglich für die Batch-Verarbeitung entwickelt wurde.
+von O(n²) oder O(n³)), Graphentheorie, Optimierungsprobleme (Verlust-, Kosten- oder Energiefunktionen, sowie  Integrations- und Ausrichtungsfunktionen ist \textit{Hadoop} nur in jeweils einfacher Problemausprägung einsetzbar. Auch für Interaktive Abfragen ist \textit{Hadoop} nur bedingt geeignet, da es ursprünglich für die \textit{Batch-Verarbeitung} entwickelt wurde.
 
-Aus diesem Grund wurde am AMPLab der University of California in Berkeley nach Alternativen geforscht, die auch für komplexe linear-algebraische Probleme, generalisierte n-Körper-Probleme und diverse Optimierungsprobleme geeignet sind. Das Ergebnis ist Spark, mittlerweile Apache Top-Level-Projekt und dazu geeignet, die Nachfolge von Hadoop als Big-Data-Analytics-Framework anzutreten. 
+Aus diesem Grund wurde am \textit{AMPLab} der University of California in Berkeley nach Alternativen geforscht, die auch für komplexe linear-algebraische Probleme, generalisierte n-Körper-Probleme und diverse Optimierungsprobleme geeignet sind. Das Ergebnis ist \textit{Spark}, mittlerweile \textit{Apache Top-Level-Projekt} und dazu geeignet, die Nachfolge von Hadoop als \textit{Big-Data-Analytics-Framework} anzutreten. 
 
 \section{Ziel und Aufbau dieser Arbeit}
 \label{section:ziel dieser Arbeit}
 
-Die vorliegende Arbeit beschäftigt sich mit Apache Spark und dem dazugehörigen Ökosystem bestehend aus Schichten  mit verschiedenen Bibliotheken, dem Berkeley Data Anaytics Stack (BDAS). Auf dem Markt befindet sich bislang noch verhältnismäßig wenig Literatur zu diesem Thema und wenn, dann werden zumeist Teilaspekte für bestimmte Anwendungsbereiche gekapselt betrachtet. Diese Arbeit soll zunächst einen ganzheitlichen Überblick über den Stack bieten. Hier werden die einzelnen Schichten des Stacks kurz beschrieben und gegebenenfalls Alternativlösungen zu den jeweiligen Implementierungen vorgestellt. 
+Die vorliegende Arbeit beschäftigt sich mit \textit{Apache Spark} und dem dazugehörigen Ökosystem bestehend aus Schichten mit verschiedenen Bibliotheken, dem \textit{Berkeley Data Anaytics Stack (BDAS)}. Auf dem Markt befindet sich bislang noch verhältnismäßig wenig Literatur zu diesem Thema und wenn, dann werden zumeist Teilaspekte für bestimmte Anwendungsbereiche gekapselt betrachtet. Diese Arbeit soll zunächst einen ganzheitlichen Überblick über den Stack bieten. Hier werden die einzelnen Schichten des Stacks kurz beschrieben und gegebenenfalls Alternativlösungen zu den jeweiligen Implementierungen vorgestellt. 
 
-Insbesondere werden in den darauffolgenden Kapiteln die Statistik- und Vorhersagebibliotheken MLLib im Gegensatz zu H2O betrachtet und die Kernimplementierung von Spark mit dem neueren Framework Apache Flink verglichen. Die Bibliotheken des Caching-Frameworks Tachyon werden vorgestellt, sowie die Streaming-Bibliothek Spark Streaming und die Graphenanwendung GraphX. 
+Insbesondere werden in den darauffolgenden Kapiteln die Statistik- und Vorhersagebibliotheken \textit{MLLib} im Gegensatz zu \textit{H2O} betrachtet und die Kernimplementierung von Spark mit dem neueren Framework \textit{Apache Flink} \footnote{Entwickelt von der Technischen Universität Berlin zunächst unter dem Namen \textit{Stratosphere} und mittlerweile (Stand Ende 2014) \textit{Apache Incubator} Projekt} verglichen. Die Bibliotheken des Caching-Frameworks Tachyon werden vorgestellt, sowie die Streaming-Bibliothek Spark Streaming und die Graphenanwendung GraphX. 
 
-Dann werden jeweils praktische Anwendungsbeispiele gezeigt und im Zuge dessen die APIs von Spark und MLlib insbesondere vorgestellt.   
+Dann werden jeweils praktische Anwendungsbeispiele gezeigt und im Zuge dessen die APIs \footnote{API = Application Programming Interface. Schnittstelle, die von einem Softwaresystem für die Einbindung in andere Softwwaresysteme zur Verfügung gestellt wird.}von Spark und MLlib insbesondere vorgestellt.   
 
 
